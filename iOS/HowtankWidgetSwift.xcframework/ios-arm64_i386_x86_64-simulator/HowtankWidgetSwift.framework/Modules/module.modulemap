@@ -1,0 +1,11 @@
+framework module HowtankWidgetSwift {
+  umbrella header "HowtankWidgetSwift.h"
+
+  export *
+  module * { export * }
+}
+
+module HowtankWidgetSwift.Swift {
+    header "HowtankWidgetSwift-Swift.h"
+    requires objc
+}

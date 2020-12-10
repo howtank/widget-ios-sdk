@@ -1,0 +1,257 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)
+// swift-module-flags: -target i386-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name HowtankWidgetSwift
+import Foundation
+@_exported import HowtankWidgetSwift
+import Swift
+import UIKit
+@_hasMissingDesignatedInitializers public class Session {
+  public var secureApiHost: Swift.String? {
+    get
+  }
+  public var secureCdnHost: Swift.String? {
+    get
+  }
+  public static let shared: HowtankWidgetSwift.Session
+  public func configure(secureApiHost: Swift.String, secureCdnHost: Swift.String)
+  @objc deinit
+}
+extension Theme {
+  public static var defaultExpert: HowtankWidgetSwift.Theme {
+    get
+  }
+  public class func light(hue: CoreGraphics.CGFloat) -> HowtankWidgetSwift.Theme
+  public class func dark(hue: CoreGraphics.CGFloat) -> HowtankWidgetSwift.Theme
+  public static var sahara: HowtankWidgetSwift.Theme {
+    get
+  }
+}
+public protocol ExpandedWidgetViewDelegate {
+  func expandedWidgetEvent(type: HowtankWidgetSwift.ExpandedWidgetEventType)
+  func widgetShouldClose(message: Swift.String, callback: () -> Swift.Void) -> Swift.Bool
+  func expertNibForShareChatCell() -> UIKit.UINib?
+  func expertMoreActionsView(chatView: HowtankWidgetSwift.ExpandedWidgetView) -> UIKit.UIView?
+  func showUser(user: HowtankWidgetSwift.User, hostId: Swift.String, imageView: UIKit.UIImageView) -> Swift.Bool
+  func keyboardFrameForNotification(notification: Foundation.Notification) -> CoreGraphics.CGFloat?
+  func autocompleteForMessage(_ message: Swift.String, hostId: Swift.String) -> Swift.String?
+  func publicProfileUrl(userId: Swift.String, hostId: Swift.String) -> Swift.String?
+  func tagsView(_ tagsView: UIKit.UIView?, chatView: HowtankWidgetSwift.ExpandedWidgetView, tags: [Swift.String]) -> UIKit.UIView?
+}
+extension ExpandedWidgetViewDelegate {
+  public func widgetShouldClose(message: Swift.String, callback: () -> Swift.Void) -> Swift.Bool
+  public func expertNibForShareChatCell() -> UIKit.UINib?
+  public func expertMoreActionsView(chatView: HowtankWidgetSwift.ExpandedWidgetView) -> UIKit.UIView?
+  public func showUser(user: HowtankWidgetSwift.User, hostId: Swift.String, imageView: UIKit.UIImageView) -> Swift.Bool
+  public func keyboardFrameForNotification(notification: Foundation.Notification) -> CoreGraphics.CGFloat?
+  public func autocompleteForMessage(_ message: Swift.String, hostId: Swift.String) -> Swift.String?
+  public func publicProfileUrl(userId: Swift.String, hostId: Swift.String) -> Swift.String?
+  public func tagsView(_ tagsView: UIKit.UIView?, chatView: HowtankWidgetSwift.ExpandedWidgetView, tags: [Swift.String]) -> UIKit.UIView?
+}
+@objc @_inheritsConvenienceInitializers public class ExpandedWidgetView : UIKit.UIView, UIKit.UICollectionViewDelegate, UIKit.UICollectionViewDataSource, UIKit.UITextViewDelegate {
+  public var chat: HowtankWidgetSwift.Chat? {
+    get
+  }
+  public var leftLayoutConstraint: UIKit.NSLayoutConstraint?
+  public var widthLayoutConstraint: UIKit.NSLayoutConstraint?
+  @objc override dynamic public func awakeFromNib()
+  @objc deinit
+  public class func nib() -> UIKit.UINib
+  public func configureExpertMode(expertChat: HowtankWidgetSwift.ExpertChat, authorization: Swift.String?, delegate: HowtankWidgetSwift.ExpandedWidgetViewDelegate) -> HowtankWidgetSwift.Chat
+  @objc public func textView(_ textView: UIKit.UITextView, shouldChangeTextIn range: Foundation.NSRange, replacementText text: Swift.String) -> Swift.Bool
+  @objc public func textViewShouldBeginEditing(_ textView: UIKit.UITextView) -> Swift.Bool
+  @objc public func textViewDidChange(_ textView: UIKit.UITextView)
+  public func willToggleChat()
+  public func toggleTextViewAndActions(show: Swift.Bool, spectator: Swift.Bool)
+  public func snapshotView() -> UIKit.UIImage?
+  public func refreshTheme(_ theme: HowtankWidgetSwift.Theme)
+  @objc public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
+  @objc public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
+  @objc override dynamic public func layoutSubviews()
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class HowtankWidget : ObjectiveC.NSObject, HowtankWidgetSwift.ExpandedWidgetViewDelegate {
+  @objc deinit
+  public static let shared: HowtankWidgetSwift.HowtankWidget
+  public func configure(hostId: Swift.String, delegate: HowtankWidgetSwift.HowtankWidgetDelegate?)
+  public func usingSandboxPlatform(_ sandboxPlatform: Swift.Bool) -> HowtankWidgetSwift.HowtankWidget
+  public func verboseMode(_ verbose: Swift.Bool) -> HowtankWidgetSwift.HowtankWidget
+  public func browse(show: Swift.Bool = true, pageName: Swift.String, pageUrl: Swift.String? = nil, position: Swift.String? = nil)
+  public func open()
+  public func remove()
+  public func collapse()
+  public func conversion(name: Swift.String, purchaseParameters: HowtankWidgetSwift.PurchaseParameters? = nil)
+  public func customFont(fontName: Swift.String, boldFontName: Swift.String? = nil) -> HowtankWidgetSwift.HowtankWidget
+  public func customImages(inactiveImage: UIKit.UIImage? = nil, activeImage: UIKit.UIImage? = nil) -> HowtankWidgetSwift.HowtankWidget
+  public func enabled() -> Swift.Bool
+  public func enable()
+  public func disable()
+  public func widgetDisabledTime(minutes: Swift.Int) -> HowtankWidgetSwift.HowtankWidget
+  public func widgetDisabledTime(days: Swift.Int) -> HowtankWidgetSwift.HowtankWidget
+  public func widgetDisabledTimeForever() -> HowtankWidgetSwift.HowtankWidget
+  public func disablingWidgetRequiresValidation(_ requiresValidation: Swift.Bool) -> HowtankWidgetSwift.HowtankWidget
+  public func expandedWidgetEvent(type: HowtankWidgetSwift.ExpandedWidgetEventType)
+  public func widgetShouldClose(chat: HowtankWidgetSwift.Chat, message: Swift.String, callback: () -> Swift.Void) -> Swift.Bool
+}
+@objc @_hasMissingDesignatedInitializers public class User : ObjectiveC.NSObject {
+  final public let id: Swift.String
+  final public let displayName: Swift.String
+  public func imageUrl() -> Swift.String
+  @objc deinit
+  @objc override dynamic public init()
+}
+public protocol ShareChatCellProtocol {
+  func refresh(chat: HowtankWidgetSwift.Chat?)
+}
+public enum ChatStatus {
+  case opened
+  case calling
+  case joined
+  case completed
+  case closed
+  public static func == (a: HowtankWidgetSwift.ChatStatus, b: HowtankWidgetSwift.ChatStatus) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+@_hasMissingDesignatedInitializers public class Chat {
+  final public let hostId: Swift.String
+  public var chatId: Swift.String? {
+    get
+  }
+  public var status: HowtankWidgetSwift.ChatStatus {
+    get
+  }
+  public var votingUsers: [Swift.String] {
+    get
+  }
+  public var spectator: Swift.Bool {
+    get
+  }
+  public var votes: Swift.Int {
+    get
+  }
+  public var currentTags: [Swift.String] {
+    get
+  }
+  @objc deinit
+  public func wroteMessage(_ message: Swift.String, completion: (() -> Swift.Void)? = nil)
+  public func closeChat()
+  public func addTag(_ tag: Swift.String)
+  public func removeTag(_ tag: Swift.String)
+  public func transferChat(tags: Swift.String?, reservedUserId: Swift.String?, reservedGroupId: Swift.String?)
+  public func banInterlocutor()
+  public func vote()
+}
+@_hasMissingDesignatedInitializers public class Messages {
+  public static let shared: HowtankWidgetSwift.Messages
+  public var messages: [Swift.String : Swift.String] {
+    get
+  }
+  public func message(key: Swift.String) -> Swift.String?
+  public func fill(messages: [Swift.String : Swift.String])
+  @objc deinit
+}
+public class ExpertChat {
+  final public let hostId: Swift.String
+  final public let platform: Swift.String
+  final public let confidential: Swift.Bool
+  final public let spectator: Swift.Bool
+  public var theme: HowtankWidgetSwift.Theme
+  public var communityMemberLabel: Swift.String?
+  public var supportAgentLabel: Swift.String?
+  public init(chatId: Swift.String, hostId: Swift.String, name: Swift.String, platform: Swift.String, confidential: Swift.Bool, spectator: Swift.Bool, closed: Swift.Bool, theme: HowtankWidgetSwift.Theme, shareable: Swift.Bool, votes: Swift.Int)
+  @objc deinit
+}
+extension String {
+  public func urlEncoded() -> Swift.String
+}
+public enum WidgetEventType {
+  case initialized
+  case opened
+  case disabled
+  case displayed
+  case hidden
+  case unavailable(reason: Swift.String)
+  case linkSelected(link: Swift.String)
+  case closed(chatClosed: Swift.Bool)
+  case scoringInterlocutor
+  case thankingInterlocutor
+  case scoredInterlocutor(note: Swift.Int)
+  case thankedInterlocutor
+  case calledInterlocutor
+}
+public enum ExpandedWidgetEventType {
+  case closed(chatView: HowtankWidgetSwift.ExpandedWidgetView, chatClosed: Swift.Bool)
+  case newChatMessage(chatView: HowtankWidgetSwift.ExpandedWidgetView, message: Swift.String)
+  case userWriting(writing: Swift.Bool, distant: Swift.Bool)
+  case linkSelected(link: Swift.String)
+  case chatInitialized
+  case scoringInterlocutor
+  case thankingInterlocutor
+  case scoredInterlocutor(note: Swift.Int)
+  case thankedInterlocutor
+  case shouldRedrawWidget
+}
+public enum ValueCurrency {
+  case euro
+  case dollar
+  case pound
+  case custom(Swift.String)
+}
+public struct PurchaseParameters {
+  public init(newBuyer: Swift.Bool, purchaseId: Swift.String, valueAmount: Swift.Double, valueCurrency: HowtankWidgetSwift.ValueCurrency)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class Theme : ObjectiveC.NSObject {
+  public enum ColorType : Swift.String {
+    case theme
+    case active
+    case themeText
+    case activeText
+    case bubbleActive
+    case bubbleActiveText
+    case bubbleInactive
+    case bubbleInactiveText
+    case userChat
+    case distantChat
+    case userChatText
+    case distantChatText
+    case userWritingView
+    case distantWritingView
+    case introText
+    case introBackground
+    case disclaimerText
+    case link
+    case linkBackground
+    case background
+    case title
+    case subtitle
+    case thumb
+    case inactive
+    case tabs
+    case header
+    public typealias RawValue = Swift.String
+    public init?(rawValue: Swift.String)
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var isLight: Swift.Bool {
+    get
+  }
+  public func color(_ type: HowtankWidgetSwift.Theme.ColorType) -> UIKit.UIColor
+  @objc deinit
+}
+public protocol HowtankWidgetDelegate {
+  func widgetEvent(event: HowtankWidgetSwift.WidgetEventType)
+  func widgetShouldClose(message: Swift.String, closeCallback: @escaping () -> Swift.Void) -> Swift.Bool
+}
+extension HowtankWidgetDelegate {
+  public func widgetShouldClose(message: Swift.String, closeCallback: () -> Swift.Void) -> Swift.Bool
+}
+extension HowtankWidgetSwift.ChatStatus : Swift.Equatable {}
+extension HowtankWidgetSwift.ChatStatus : Swift.Hashable {}
+extension HowtankWidgetSwift.Theme.ColorType : Swift.Equatable {}
+extension HowtankWidgetSwift.Theme.ColorType : Swift.Hashable {}
+extension HowtankWidgetSwift.Theme.ColorType : Swift.RawRepresentable {}
