@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
-// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name HowtankWidgetSwift
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name HowtankWidgetSwift
 import Foundation
 @_exported import HowtankWidgetSwift
 import Swift
@@ -75,24 +75,24 @@ extension HowtankWidgetSwift.ExpandedWidgetViewDelegate {
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class HowtankWidget : ObjectiveC.NSObject, HowtankWidgetSwift.ExpandedWidgetViewDelegate {
   @objc deinit
-  public static let shared: HowtankWidgetSwift.HowtankWidget
-  public func configure(hostId: Swift.String, delegate: HowtankWidgetSwift.HowtankWidgetDelegate?)
-  public func usingSandboxPlatform(_ sandboxPlatform: Swift.Bool) -> HowtankWidgetSwift.HowtankWidget
-  public func verboseMode(_ verbose: Swift.Bool) -> HowtankWidgetSwift.HowtankWidget
-  public func browse(show: Swift.Bool = true, pageName: Swift.String, pageUrl: Swift.String? = nil, position: Swift.String? = nil)
-  public func open()
-  public func remove()
-  public func collapse()
-  public func conversion(name: Swift.String, purchaseParameters: HowtankWidgetSwift.PurchaseParameters? = nil)
-  public func customFont(fontName: Swift.String, boldFontName: Swift.String? = nil) -> HowtankWidgetSwift.HowtankWidget
-  public func customImages(inactiveImage: UIKit.UIImage? = nil, activeImage: UIKit.UIImage? = nil) -> HowtankWidgetSwift.HowtankWidget
-  public func enabled() -> Swift.Bool
-  public func enable()
-  public func disable()
-  public func widgetDisabledTime(minutes: Swift.Int) -> HowtankWidgetSwift.HowtankWidget
-  public func widgetDisabledTime(days: Swift.Int) -> HowtankWidgetSwift.HowtankWidget
-  public func widgetDisabledTimeForever() -> HowtankWidgetSwift.HowtankWidget
-  public func disablingWidgetRequiresValidation(_ requiresValidation: Swift.Bool) -> HowtankWidgetSwift.HowtankWidget
+  @objc public static let shared: HowtankWidgetSwift.HowtankWidget
+  @objc public func configure(hostId: Swift.String, delegate: HowtankWidgetSwift.HowtankWidgetDelegate?)
+  @objc public func usingSandboxPlatform(_ sandboxPlatform: Swift.Bool) -> HowtankWidgetSwift.HowtankWidget
+  @objc public func verboseMode(_ verbose: Swift.Bool) -> HowtankWidgetSwift.HowtankWidget
+  @objc public func browse(show: Swift.Bool = true, pageName: Swift.String, pageUrl: Swift.String? = nil, position: Swift.String? = nil)
+  @objc public func open()
+  @objc public func remove()
+  @objc public func collapse()
+  @objc public func conversion(name: Swift.String, purchaseParameters: HowtankWidgetSwift.PurchaseParameters? = nil)
+  @objc public func customFont(fontName: Swift.String, boldFontName: Swift.String? = nil) -> HowtankWidgetSwift.HowtankWidget
+  @objc public func customImages(inactiveImage: UIKit.UIImage? = nil, activeImage: UIKit.UIImage? = nil) -> HowtankWidgetSwift.HowtankWidget
+  @objc public func enabled() -> Swift.Bool
+  @objc public func enable()
+  @objc public func disable()
+  @objc public func widgetDisabledTime(minutes: Swift.Int) -> HowtankWidgetSwift.HowtankWidget
+  @objc public func widgetDisabledTime(days: Swift.Int) -> HowtankWidgetSwift.HowtankWidget
+  @objc public func widgetDisabledTimeForever() -> HowtankWidgetSwift.HowtankWidget
+  @objc public func disablingWidgetRequiresValidation(_ requiresValidation: Swift.Bool) -> HowtankWidgetSwift.HowtankWidget
   public func expandedWidgetEvent(type: HowtankWidgetSwift.ExpandedWidgetEventType)
   public func widgetShouldClose(chat: HowtankWidgetSwift.Chat, message: Swift.String, callback: () -> Swift.Void) -> Swift.Bool
 }
@@ -169,20 +169,25 @@ public class ExpertChat {
 extension Swift.String {
   public func urlEncoded() -> Swift.String
 }
-public enum WidgetEventType {
+@objc public enum WidgetEventType : Swift.Int {
   case initialized
   case opened
   case disabled
   case displayed
   case hidden
-  case unavailable(reason: Swift.String)
-  case linkSelected(link: Swift.String)
-  case closed(chatClosed: Swift.Bool)
+  case unavailable
+  case linkSelected
+  case closed
   case scoringInterlocutor
   case thankingInterlocutor
-  case scoredInterlocutor(note: Swift.Int)
+  case scoredInterlocutor
   case thankedInterlocutor
   case calledInterlocutor
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
 }
 public enum ExpandedWidgetEventType {
   case closed(chatView: HowtankWidgetSwift.ExpandedWidgetView, chatClosed: Swift.Bool)
@@ -202,8 +207,21 @@ public enum ValueCurrency {
   case pound
   case custom(Swift.String)
 }
-public struct PurchaseParameters {
+@objc public enum HowtankCurrency : Swift.Int {
+  case euro
+  case dollar
+  case pound
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public class PurchaseParameters : ObjectiveC.NSObject {
   public init(newBuyer: Swift.Bool, purchaseId: Swift.String, valueAmount: Swift.Double, valueCurrency: HowtankWidgetSwift.ValueCurrency)
+  @objc public init(newBuyer: Swift.Bool, purchaseId: Swift.String, valueAmount: Swift.Double, valueCurrency: HowtankWidgetSwift.HowtankCurrency)
+  @objc public init(newBuyer: Swift.Bool, purchaseId: Swift.String, valueAmount: Swift.Double, customValueCurrency: Swift.String)
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class Theme : ObjectiveC.NSObject {
   public enum ColorType : Swift.String {
@@ -248,15 +266,21 @@ public struct PurchaseParameters {
 extension Foundation.Notification {
   public func keyboardHeight(forView view: UIKit.UIView) -> CoreGraphics.CGFloat
 }
-public protocol HowtankWidgetDelegate {
-  func widgetEvent(event: HowtankWidgetSwift.WidgetEventType)
-  func widgetShouldClose(message: Swift.String, closeCallback: @escaping () -> Swift.Void) -> Swift.Bool
+@objc public protocol HowtankWidgetDelegate {
+  @objc func widgetEvent(event: HowtankWidgetSwift.WidgetEventType, paramaters: [Swift.String : Any]?)
+  @objc func widgetShouldClose(message: Swift.String, closeCallback: @escaping () -> Swift.Void) -> Swift.Bool
 }
 extension HowtankWidgetSwift.HowtankWidgetDelegate {
   public func widgetShouldClose(message: Swift.String, closeCallback: () -> Swift.Void) -> Swift.Bool
 }
 extension HowtankWidgetSwift.ChatStatus : Swift.Equatable {}
 extension HowtankWidgetSwift.ChatStatus : Swift.Hashable {}
+extension HowtankWidgetSwift.WidgetEventType : Swift.Equatable {}
+extension HowtankWidgetSwift.WidgetEventType : Swift.Hashable {}
+extension HowtankWidgetSwift.WidgetEventType : Swift.RawRepresentable {}
+extension HowtankWidgetSwift.HowtankCurrency : Swift.Equatable {}
+extension HowtankWidgetSwift.HowtankCurrency : Swift.Hashable {}
+extension HowtankWidgetSwift.HowtankCurrency : Swift.RawRepresentable {}
 extension HowtankWidgetSwift.Theme.ColorType : Swift.Equatable {}
 extension HowtankWidgetSwift.Theme.ColorType : Swift.Hashable {}
 extension HowtankWidgetSwift.Theme.ColorType : Swift.RawRepresentable {}
