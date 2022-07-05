@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		qZVTWrGpjD0C5smUXd3b7KKSx0E=
+		Nlb8NTmDPDM/U5EaN/Op0sga7Qs=
 		</data>
 		<key>HTAbuseCell.nib</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>HTReceivedImageCell.nib</key>
 		<data>
-		qfr5OCYfq4qcz/JtvusMfulaH00=
+		p31UFbHTetgk1Z1tHQEyA6VbJ/E=
 		</data>
 		<key>HTReceivedMessageCell.nib</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>HTSentImageCell.nib</key>
 		<data>
-		DjcjNsW6pC53hBc1fZ8S9XW3684=
+		XJ/RHABsLkmb9SudVSzfnL2IewU=
 		</data>
 		<key>HTSentMessageCell.nib</key>
 		<data>
@@ -82,7 +82,7 @@
 		</data>
 		<key>Headers/HowtankWidgetSwift-Swift.h</key>
 		<data>
-		7GU/tjDaLGduiWexoYBPt3GFNUQ=
+		6xuCTQJbADuvwNOzX7B2UYItnk4=
 		</data>
 		<key>Headers/HowtankWidgetSwift.h</key>
 		<data>
@@ -90,39 +90,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		udlRB55mFEKx8tm7RWkJJJ64zDU=
-		</data>
-		<key>Modules/HowtankWidgetSwift.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
-		<data>
-		p9AUKiz/4EAzNU/l1YNCXAFGuaw=
-		</data>
-		<key>Modules/HowtankWidgetSwift.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
-		<data>
-		tXhdDQzt/LACdujndHKKZVE8Mvk=
+		KsdDmh55RQYd8wsBMNtpuJcOCVU=
 		</data>
 		<key>Modules/HowtankWidgetSwift.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		kx6N9H0vk31GbCL4akl/7xOhMrA=
+		I1WnO/jQvPN/zgzqTBHaUdMj2oA=
 		</data>
 		<key>Modules/HowtankWidgetSwift.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		ZD6AAVyZtOpRqzikEqJsvZgooJw=
+		FWiaWJW8xWtU1mWlco8El8uv4ZQ=
 		</data>
 		<key>Modules/HowtankWidgetSwift.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		h3Wee6jYosvWn7m9EDmanzS+/q8=
+		pcDC8wX4lTdYeraxMyERVt/iHhk=
 		</data>
 		<key>Modules/HowtankWidgetSwift.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		PTG0znrP7K+45bMuMf1ISl5FtEU=
+		zgv5dT9HV/PZfJ2hwd/pmEmgxPY=
 		</data>
 		<key>Modules/HowtankWidgetSwift.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		wy1/Qlg2FVQ9kHHwHZbdjrbTyus=
+		IboSFfzbMoDUvn9/t2K+LzCSPgE=
 		</data>
 		<key>Modules/HowtankWidgetSwift.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		QQP8pPMSVZY2p/BE6MiDvn5gJH8=
+		0E0+LLxna+3Edkjkukh16lM5aSM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -135,7 +127,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1J0gXykCbpZHQ7/Suys1lXxgxDJGVhn95+Y91eqq44Y=
+			60g9xT6oLTlbK37wPK16c8a+VFCkECVIZGt8RrrMmmU=
 			</data>
 		</dict>
 		<key>HTAbuseCell.nib</key>
@@ -212,7 +204,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			BYPJJoGaH1veq3q7kLLHU+0QjFj4Z7gZecNwlr9NWzc=
+			4YQiwXuBpv/SNIfia/zUrfBEdoZ+JaMr6vI+5Kv8rhs=
 			</data>
 		</dict>
 		<key>HTReceivedMessageCell.nib</key>
@@ -233,7 +225,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			W1bO3z7+D7m1RUaz2b0tvXHmbzCveC0V8qgG/Umy5mw=
+			IywtfJcqJZVWgUs3s0cHj48t7I4iYRV1YpS3/kpDmV8=
 			</data>
 		</dict>
 		<key>HTSentMessageCell.nib</key>
@@ -268,7 +260,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			L65CUSH/JxLx9ypNq4FGf31q8f3DnnSTXX/kIRv8Nd0=
+			e4Q1QEJ8+/nrdiKvaswRMInmMwXJ4DOeWD7c+9/EAoQ=
 			</data>
 		</dict>
 		<key>Headers/HowtankWidgetSwift.h</key>
@@ -278,60 +270,46 @@
 			JsvOB1WjJJxJLwSnF6YHg/DVtD5+Pa/8UrlvQ6tDyec=
 			</data>
 		</dict>
-		<key>Modules/HowtankWidgetSwift.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			NO/Be14/AiAjC0mWQijRTP8UuNeFLNLOf//OgWFARjE=
-			</data>
-		</dict>
-		<key>Modules/HowtankWidgetSwift.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			2fRIic9SJGTysGPFLOCbvcpD8yf11bRg6SNSFV6ILgo=
-			</data>
-		</dict>
 		<key>Modules/HowtankWidgetSwift.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			L2MCTG6L+9kf0nqmuHMTAH8+HlpRPjq1ikQA2k9cxXA=
+			b2k3Cp5yKXVU6rxwipCM8Ap1rDsW2L65xFh4EfvoiI8=
 			</data>
 		</dict>
 		<key>Modules/HowtankWidgetSwift.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			CzPNLu4mJj1j9Q19peTM0xDZ0NVM7x2KSgae2KI4ZeU=
+			ALjuu4MYMq337nrI2FSrFltGO7VUjr0vWzmAv2saqgs=
 			</data>
 		</dict>
 		<key>Modules/HowtankWidgetSwift.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			CYz5SwhVZEwq0+MsCRotU9O4+8j5UPm1OY47mc5wanc=
+			a/Oh5kxdFGmPr2W7lNwxcQaS9YzNqzNHDsHztKrFsNg=
 			</data>
 		</dict>
 		<key>Modules/HowtankWidgetSwift.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qmwxMU3MOdyaIRqlRp+POwGmCS6VipjPvOztQsi9Iw4=
+			SqYVgOfw6ti22FWb7t64RcLNniHfuGmEHqHdX/lgY0w=
 			</data>
 		</dict>
 		<key>Modules/HowtankWidgetSwift.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			c6F+B4LeQElFRIiRIYVyHPFMaFhy4ihyovWw6wCYh1o=
+			W6DRbL5L8nrssrNcVwpUtKvEh5mW14te5QPzdT1+fD4=
 			</data>
 		</dict>
 		<key>Modules/HowtankWidgetSwift.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0Qczn1iykXdz6bNs43Zcmp7VUtmY8/ooEK8pQwe6C6w=
+			Mrv0loMZNkHwfKY6G0Es2a6vB8pS6lm59YNexpOt10k=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

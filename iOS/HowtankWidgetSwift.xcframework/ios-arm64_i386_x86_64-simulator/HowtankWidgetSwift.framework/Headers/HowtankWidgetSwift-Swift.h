@@ -242,13 +242,78 @@ SWIFT_CLASS("_TtC18HowtankWidgetSwift18ExpandedWidgetView")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+typedef SWIFT_ENUM(NSInteger, HowtankCurrency, open) {
+  HowtankCurrencyEuro = 0,
+  HowtankCurrencyDollar = 1,
+  HowtankCurrencyPound = 2,
+};
+
+@protocol HowtankWidgetDelegate;
+@class PurchaseParameters;
+@class UIImage;
 
 SWIFT_CLASS("_TtC18HowtankWidgetSwift13HowtankWidget")
 @interface HowtankWidget : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+/// Widget instance
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) HowtankWidget * _Nonnull shared;)
++ (HowtankWidget * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+/// Set the widget host id and delegate. This method is mandatory and should be called last
+- (void)configureWithHostId:(NSString * _Nonnull)hostId delegate:(id <HowtankWidgetDelegate> _Nullable)delegate;
+/// Set to true if you want to use the integration platform
+- (HowtankWidget * _Nonnull)usingSandboxPlatform:(BOOL)sandboxPlatform SWIFT_WARN_UNUSED_RESULT;
+/// Set verbose mode
+- (HowtankWidget * _Nonnull)verboseMode:(BOOL)verbose SWIFT_WARN_UNUSED_RESULT;
+/// Update widget visibility. Decide wether or not widget is discreet
+- (void)browseWithShow:(BOOL)show pageName:(NSString * _Nonnull)pageName pageUrl:(NSString * _Nullable)pageUrl position:(NSString * _Nullable)position;
+/// Open the widget chat window. If the widget is not enabled, nothing happens
+- (void)open;
+/// Remove created widget from superview
+- (void)remove;
+/// Collapse widget (close the chat window)
+- (void)collapse;
+/// Send a conversion tag to Howtank
+- (void)conversionWithName:(NSString * _Nonnull)name purchaseParameters:(PurchaseParameters * _Nullable)purchaseParameters;
+/// Set custom font name and bold font name (optional) to be used for the widget
+- (HowtankWidget * _Nonnull)customFontWithFontName:(NSString * _Nonnull)fontName boldFontName:(NSString * _Nullable)boldFontName SWIFT_WARN_UNUSED_RESULT;
+/// Set optional custom images for inactive and active chat states. Images should be 30x30
+- (HowtankWidget * _Nonnull)customImagesWithInactiveImage:(UIImage * _Nullable)inactiveImage activeImage:(UIImage * _Nullable)activeImage SWIFT_WARN_UNUSED_RESULT;
+/// Checks of the widget is enabled. Widget can be disabled by dragging it in the “clear” circle.
+- (BOOL)enabled SWIFT_WARN_UNUSED_RESULT;
+/// Enable widget if it was previously disabled.
+- (void)enable;
+/// Disable widget. Widget will never be shown again unless enabled.
+- (void)disable;
+/// Set the number of minutes the widget will be disabled when removed by the user
+- (HowtankWidget * _Nonnull)widgetDisabledTimeWithMinutes:(NSInteger)minutes SWIFT_WARN_UNUSED_RESULT;
+/// Set the number of days the widget will be disabled when removed by the user
+- (HowtankWidget * _Nonnull)widgetDisabledTimeWithDays:(NSInteger)days SWIFT_WARN_UNUSED_RESULT;
+/// Set the widget to be disabled forever (until manually activated) when removed by the user
+- (HowtankWidget * _Nonnull)widgetDisabledTimeForever SWIFT_WARN_UNUSED_RESULT;
+/// Set if disabling the widget requires user validation
+- (HowtankWidget * _Nonnull)disablingWidgetRequiresValidation:(BOOL)requiresValidation SWIFT_WARN_UNUSED_RESULT;
 @end
 
+enum WidgetEventType : NSInteger;
+
+SWIFT_PROTOCOL("_TtP18HowtankWidgetSwift21HowtankWidgetDelegate_")
+@protocol HowtankWidgetDelegate
+/// Method called whenever there is a new widget event
+- (void)widgetEventWithEvent:(enum WidgetEventType)event paramaters:(NSDictionary<NSString *, id> * _Nullable)paramaters;
+/// Optional - Implement this method if you want to overrid the close message. Return true if implemented and closeCallback when widget should close
+- (BOOL)widgetShouldCloseWithMessage:(NSString * _Nonnull)message closeCallback:(void (^ _Nonnull)(void))closeCallback SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+
+SWIFT_CLASS("_TtC18HowtankWidgetSwift18PurchaseParameters")
+@interface PurchaseParameters : NSObject
+- (nonnull instancetype)initWithNewBuyer:(BOOL)newBuyer purchaseId:(NSString * _Nonnull)purchaseId valueAmount:(double)valueAmount valueCurrency:(enum HowtankCurrency)valueCurrency OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNewBuyer:(BOOL)newBuyer purchaseId:(NSString * _Nonnull)purchaseId valueAmount:(double)valueAmount customValueCurrency:(NSString * _Nonnull)customValueCurrency OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 
 SWIFT_CLASS("_TtC18HowtankWidgetSwift5Theme")
@@ -269,6 +334,22 @@ SWIFT_CLASS("_TtC18HowtankWidgetSwift4User")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+typedef SWIFT_ENUM(NSInteger, WidgetEventType, open) {
+  WidgetEventTypeInitialized = 0,
+  WidgetEventTypeOpened = 1,
+  WidgetEventTypeDisabled = 2,
+  WidgetEventTypeDisplayed = 3,
+  WidgetEventTypeHidden = 4,
+  WidgetEventTypeUnavailable = 5,
+  WidgetEventTypeLinkSelected = 6,
+  WidgetEventTypeClosed = 7,
+  WidgetEventTypeScoringInterlocutor = 8,
+  WidgetEventTypeThankingInterlocutor = 9,
+  WidgetEventTypeScoredInterlocutor = 10,
+  WidgetEventTypeThankedInterlocutor = 11,
+  WidgetEventTypeCalledInterlocutor = 12,
+};
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
@@ -519,13 +600,78 @@ SWIFT_CLASS("_TtC18HowtankWidgetSwift18ExpandedWidgetView")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+typedef SWIFT_ENUM(NSInteger, HowtankCurrency, open) {
+  HowtankCurrencyEuro = 0,
+  HowtankCurrencyDollar = 1,
+  HowtankCurrencyPound = 2,
+};
+
+@protocol HowtankWidgetDelegate;
+@class PurchaseParameters;
+@class UIImage;
 
 SWIFT_CLASS("_TtC18HowtankWidgetSwift13HowtankWidget")
 @interface HowtankWidget : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+/// Widget instance
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) HowtankWidget * _Nonnull shared;)
++ (HowtankWidget * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+/// Set the widget host id and delegate. This method is mandatory and should be called last
+- (void)configureWithHostId:(NSString * _Nonnull)hostId delegate:(id <HowtankWidgetDelegate> _Nullable)delegate;
+/// Set to true if you want to use the integration platform
+- (HowtankWidget * _Nonnull)usingSandboxPlatform:(BOOL)sandboxPlatform SWIFT_WARN_UNUSED_RESULT;
+/// Set verbose mode
+- (HowtankWidget * _Nonnull)verboseMode:(BOOL)verbose SWIFT_WARN_UNUSED_RESULT;
+/// Update widget visibility. Decide wether or not widget is discreet
+- (void)browseWithShow:(BOOL)show pageName:(NSString * _Nonnull)pageName pageUrl:(NSString * _Nullable)pageUrl position:(NSString * _Nullable)position;
+/// Open the widget chat window. If the widget is not enabled, nothing happens
+- (void)open;
+/// Remove created widget from superview
+- (void)remove;
+/// Collapse widget (close the chat window)
+- (void)collapse;
+/// Send a conversion tag to Howtank
+- (void)conversionWithName:(NSString * _Nonnull)name purchaseParameters:(PurchaseParameters * _Nullable)purchaseParameters;
+/// Set custom font name and bold font name (optional) to be used for the widget
+- (HowtankWidget * _Nonnull)customFontWithFontName:(NSString * _Nonnull)fontName boldFontName:(NSString * _Nullable)boldFontName SWIFT_WARN_UNUSED_RESULT;
+/// Set optional custom images for inactive and active chat states. Images should be 30x30
+- (HowtankWidget * _Nonnull)customImagesWithInactiveImage:(UIImage * _Nullable)inactiveImage activeImage:(UIImage * _Nullable)activeImage SWIFT_WARN_UNUSED_RESULT;
+/// Checks of the widget is enabled. Widget can be disabled by dragging it in the “clear” circle.
+- (BOOL)enabled SWIFT_WARN_UNUSED_RESULT;
+/// Enable widget if it was previously disabled.
+- (void)enable;
+/// Disable widget. Widget will never be shown again unless enabled.
+- (void)disable;
+/// Set the number of minutes the widget will be disabled when removed by the user
+- (HowtankWidget * _Nonnull)widgetDisabledTimeWithMinutes:(NSInteger)minutes SWIFT_WARN_UNUSED_RESULT;
+/// Set the number of days the widget will be disabled when removed by the user
+- (HowtankWidget * _Nonnull)widgetDisabledTimeWithDays:(NSInteger)days SWIFT_WARN_UNUSED_RESULT;
+/// Set the widget to be disabled forever (until manually activated) when removed by the user
+- (HowtankWidget * _Nonnull)widgetDisabledTimeForever SWIFT_WARN_UNUSED_RESULT;
+/// Set if disabling the widget requires user validation
+- (HowtankWidget * _Nonnull)disablingWidgetRequiresValidation:(BOOL)requiresValidation SWIFT_WARN_UNUSED_RESULT;
 @end
 
+enum WidgetEventType : NSInteger;
+
+SWIFT_PROTOCOL("_TtP18HowtankWidgetSwift21HowtankWidgetDelegate_")
+@protocol HowtankWidgetDelegate
+/// Method called whenever there is a new widget event
+- (void)widgetEventWithEvent:(enum WidgetEventType)event paramaters:(NSDictionary<NSString *, id> * _Nullable)paramaters;
+/// Optional - Implement this method if you want to overrid the close message. Return true if implemented and closeCallback when widget should close
+- (BOOL)widgetShouldCloseWithMessage:(NSString * _Nonnull)message closeCallback:(void (^ _Nonnull)(void))closeCallback SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+
+SWIFT_CLASS("_TtC18HowtankWidgetSwift18PurchaseParameters")
+@interface PurchaseParameters : NSObject
+- (nonnull instancetype)initWithNewBuyer:(BOOL)newBuyer purchaseId:(NSString * _Nonnull)purchaseId valueAmount:(double)valueAmount valueCurrency:(enum HowtankCurrency)valueCurrency OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNewBuyer:(BOOL)newBuyer purchaseId:(NSString * _Nonnull)purchaseId valueAmount:(double)valueAmount customValueCurrency:(NSString * _Nonnull)customValueCurrency OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 
 SWIFT_CLASS("_TtC18HowtankWidgetSwift5Theme")
@@ -546,6 +692,22 @@ SWIFT_CLASS("_TtC18HowtankWidgetSwift4User")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+typedef SWIFT_ENUM(NSInteger, WidgetEventType, open) {
+  WidgetEventTypeInitialized = 0,
+  WidgetEventTypeOpened = 1,
+  WidgetEventTypeDisabled = 2,
+  WidgetEventTypeDisplayed = 3,
+  WidgetEventTypeHidden = 4,
+  WidgetEventTypeUnavailable = 5,
+  WidgetEventTypeLinkSelected = 6,
+  WidgetEventTypeClosed = 7,
+  WidgetEventTypeScoringInterlocutor = 8,
+  WidgetEventTypeThankingInterlocutor = 9,
+  WidgetEventTypeScoredInterlocutor = 10,
+  WidgetEventTypeThankedInterlocutor = 11,
+  WidgetEventTypeCalledInterlocutor = 12,
+};
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
