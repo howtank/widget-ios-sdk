@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3n3-D7-nPk" customClass="AbuseCompleteCell" customModule="HowtankWidgetSwift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="294" height="351"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="294" height="351"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kir-LB-jFF">
+                        <rect key="frame" x="15" y="121" width="264" height="109"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="264" translatesAutoresizingMaskIntoConstraints="NO" id="mSM-fU-B2V">
+                                <rect key="frame" x="0.0" y="0.0" width="264" height="39"/>
+                                <string key="text">Votre message a bien été envoyé.
+Merci.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOZ-rd-3wc">
+                                <rect key="frame" x="32" y="69" width="200" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="W4S-cs-uHF"/>
+                                    <constraint firstAttribute="width" constant="200" id="Yg1-E4-gjz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <inset key="imageEdgeInsets" minX="-15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Fermer la conversation">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeAction:" destination="3n3-D7-nPk" eventType="touchUpInside" id="hqB-2y-LhE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OOZ-rd-3wc" firstAttribute="top" secondItem="mSM-fU-B2V" secondAttribute="bottom" constant="30" id="Dap-8T-Fdw"/>
+                            <constraint firstItem="mSM-fU-B2V" firstAttribute="top" secondItem="Kir-LB-jFF" secondAttribute="top" id="HyY-QA-PoB"/>
+                            <constraint firstAttribute="bottom" secondItem="OOZ-rd-3wc" secondAttribute="bottom" id="MAa-Q9-s8Q"/>
+                            <constraint firstItem="OOZ-rd-3wc" firstAttribute="centerX" secondItem="Kir-LB-jFF" secondAttribute="centerX" id="Qwr-u6-bfL"/>
+                            <constraint firstItem="mSM-fU-B2V" firstAttribute="leading" secondItem="Kir-LB-jFF" secondAttribute="leading" id="TVJ-fb-RVa"/>
+                            <constraint firstAttribute="trailing" secondItem="mSM-fU-B2V" secondAttribute="trailing" id="aTd-pU-e0D"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Kir-LB-jFF" firstAttribute="centerY" secondItem="3n3-D7-nPk" secondAttribute="centerY" id="N3b-wp-jxQ"/>
+                <constraint firstItem="Kir-LB-jFF" firstAttribute="leading" secondItem="3n3-D7-nPk" secondAttribute="leading" constant="15" id="klS-xy-QwP"/>
+                <constraint firstAttribute="trailing" secondItem="Kir-LB-jFF" secondAttribute="trailing" constant="15" id="phc-GF-Dmx"/>
+            </constraints>
+            <size key="customSize" width="294" height="351"/>
+            <connections>
+                <outlet property="messageLabel" destination="mSM-fU-B2V" id="Wt1-Qy-eer"/>
+                <outlet property="validationButton" destination="OOZ-rd-3wc" id="Wuq-hy-jmD"/>
+            </connections>
+            <point key="canvasLocation" x="436" y="401.5"/>
+        </collectionViewCell>
+    </objects>
+</document>
