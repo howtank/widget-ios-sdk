@@ -1,11 +1,7 @@
-require "json"
-
-package = JSON.parse(File.read(File.join(__dir__, "package.json")))
-
 Pod::Spec.new do |s|
   s.name         = 'HowtankWidgetSwift'
-  s.version      = package["version"]
-  s.summary      = package["description"]
+  s.version      = '2.2.6'
+  s.summary      = "Howtank Widget library for Click to Community® chat on iOS."
 
   s.description      = <<-DESC
 Howtank Widget library is intended to be included in apps after creating an account. Please visit our website for more information.
