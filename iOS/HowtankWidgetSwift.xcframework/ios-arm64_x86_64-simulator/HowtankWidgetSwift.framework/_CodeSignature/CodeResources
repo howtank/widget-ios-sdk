@@ -50,7 +50,7 @@
 		</data>
 		<key>HTReceivedImageCell.nib</key>
 		<data>
-		yCFBgWdiWJuhL0q+qqMubHco0ds=
+		HBMNm+zYegCK6YYMuMGw9DoIfhc=
 		</data>
 		<key>HTReceivedMessageCell.nib</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>HTSentImageCell.nib</key>
 		<data>
-		9k7v+g2eH0rIdwP+OxIDEGVTrnI=
+		sTmQBkJP0/ny44By5mxrcfFnyO4=
 		</data>
 		<key>HTSentMessageCell.nib</key>
 		<data>
@@ -90,7 +90,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		weWFBfeEqSjVu7r7prPOyqNQGBM=
+		D0b+zVAc0qOXmOiNZl5ojoGAuSw=
 		</data>
 		<key>Modules/HowtankWidgetSwift.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -204,7 +204,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VT58fr11J39nWuGU3lCEpzac3SDEjPPWIzlDcQxj9QA=
+			xZ169+pGKZz36zsvA3uVSctL/+Mj7ri/FjlA+uZZl2I=
 			</data>
 		</dict>
 		<key>HTReceivedMessageCell.nib</key>
@@ -225,7 +225,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			a/GiMhuZrtcr7jUVG56cf95wPwFzf4ME421Y57Jw9D8=
+			RMNo9VFGeVQCUDg6rONS3r6FCRL3fDP/sSK8Dug/Ih4=
 			</data>
 		</dict>
 		<key>HTSentMessageCell.nib</key>
