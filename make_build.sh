@@ -1,3 +1,5 @@
-git submodule update --init --recursive
 cd ./source
+git pull
+
+#run build framewok.
 sh ./build_xcframework.sh
