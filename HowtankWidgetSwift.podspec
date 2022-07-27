@@ -14,19 +14,10 @@ Pod::Spec.new do |s|
   s.homepage     = package["homepage"]
   s.license      = { :type => 'Commercial', :text => 'See https://www.howtank.com/mentions-legales' }
   s.author     = package["author"]
-
-  s.source = { :path => '.' }
-
-  s.platform     = :ios, '13.0'
-  s.swift_version = '5'
-
-  #s.source       = { :git => "http://EXAMPLE/HowtankWidget-Swift.git", :tag => "#{s.version}" }
-  
-  s.source_files  = "HowtankWidgetSwift/**/*.swift"
-  s.resource_bundles = {
-     'HowtankWidgetSwift' => ['HowtankWidgetSwift/**/*.xib','HowtankWidgetSwift/**/*.xcassets']
-  }
-  #s.vendored_frameworks = "Output/HowtankWidgetSwift-Release-iphoneuniversal/HowtankWidgetSwift.framework"
+  s.source     = { :git => "git@github.com:howtank/widget-ios-sdk.git", :tag => s.version.to_s }
+  s.platform     = :ios
   s.ios.deployment_target = '10.0'
 
+  s.ios.preserve_paths = 'iOS/HowtankWidgetSwift.xcframework'
+  s.ios.vendored_frameworks = 'iOS/HowtankWidgetSwift.xcframework'
 end
