@@ -18,6 +18,7 @@ newVersion=${major}.${minor}.${build}
 
 sed -i '' "s/${version}/${newVersion}/" ./package.json
 sed -i '' "s/'${version}'/'${newVersion}'/" ./HowtankWidgetSwift.podspec
+sed -i '' "s/${version}/${newVersion}/" ./README.md
 cat ./package.json
 
 #remove old one
@@ -28,8 +29,4 @@ git pull
 
 #run build framewok.
 sh ./build_xcframework.sh
-
-# updated podspec
-cd ..
-sh ./cocoapod.sh
 
