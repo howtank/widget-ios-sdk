@@ -19,8 +19,3 @@ git push
 
 git tag -m "update podspec" $version
 git push --tags
-
-# publish podspec to trunk
-pod trunk push HowtankWidgetSwift.podspec --allow-warnings
-
-git pull
