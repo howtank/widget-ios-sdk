@@ -18,7 +18,6 @@ jobs:
     - name: dispatch trigger
       run: |
         sh ./make_build.sh
-        cd ..
         sh ./publish_podspec.sh ${{ secrets.ACCESS_TOKEN }}
     - name: Deploy to Cocoapods
       run: |
