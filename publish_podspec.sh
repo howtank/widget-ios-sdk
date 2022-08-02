@@ -19,3 +19,7 @@ git push
 
 git tag -m "update podspec" $version
 git push --tags
+
+sha=$(git rev-parse HEAD)
+
+curl -X POST https://api.github.com/repos/howtank/widget-ios-sdk/git/refs -H "Accept: application/vnd.github+json" -H "Authorization: token $1" -d '{"ref":"refs/heads/'$version'", "sha":'$sha'}'

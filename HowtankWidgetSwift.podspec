@@ -10,7 +10,7 @@ Howtank Widget library is intended to be included in apps after creating an acco
   s.homepage         = "http://www.howtank.com"
   s.license          = { :type => 'Commercial', :text => 'See https://www.howtank.com/mentions-legales' }
   s.author           = "Howtank"
-  s.source           = { :git => "git@github.com:howtank/widget-ios-sdk.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/howtank/widget-ios-swift-sdk.git", :tag => s.version.to_s }
   s.platform     = :ios
   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
