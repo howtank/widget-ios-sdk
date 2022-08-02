@@ -1,0 +1,26 @@
+name: dispatch receiver
+
+on: [repository_dispatch]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Checkout submodules
+      run: git submodule update --init --recursive
+    - name: Install Cocoapods
+      run: gem install cocoapods  
+    - name: dispatch trigger
+      if: github.event.action == 'making-framework'
+      run: |
+        cd ./source
+        sh ./make_build.sh
+        sh ./publish_podspec.sh
+    - name: Deploy to Cocoapods
+      run: |
+        set -eo pipefail
+        pod lib lint --allow-warnings
+        pod trunk push --allow-warnings
+      env:
+        COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
