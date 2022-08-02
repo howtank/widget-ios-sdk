@@ -17,6 +17,6 @@ Howtank Widget library is intended to be included in apps after creating an acco
 
   s.ios.deployment_target = '10.0'
 
-  s.ios.preserve_paths = 'iOS/HowtankWidgetSwift.xcframework'
-  s.ios.vendored_frameworks = 'iOS/HowtankWidgetSwift.xcframework'
+  s.ios.preserve_paths = 'source/build/HowtankWidgetSwift.xcframework'
+  s.ios.vendored_frameworks = 'source/build/HowtankWidgetSwift.xcframework'
 end

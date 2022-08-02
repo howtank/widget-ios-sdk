@@ -1,6 +1,7 @@
 name: dispatch receiver
-
-on: [repository_dispatch]
+on: 
+  push:
+    branches: ["update-script"]
 
 jobs:
   build:
@@ -14,7 +15,6 @@ jobs:
     - name: Install Cocoapods
       run: gem install cocoapods  
     - name: dispatch trigger
-      if: github.event.action == 'making-framework'
       run: |
         sh ./update_version.sh
         sh ./publish_podspec.sh ${{ secrets.ACCESS_TOKEN }}
