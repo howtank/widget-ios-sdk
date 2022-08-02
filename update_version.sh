@@ -8,5 +8,7 @@ else
   sed -i '' "s/${sdkVersion}/${sourceCodeVersion}/" ./package.json
   sed -i '' "s/'${sdkVersion}'/'${sourceCodeVersion}'/" ./HowtankWidgetSwift.podspec
   sed -i '' "s/${sdkVersion}/${sourceCodeVersion}/" ./README.md
+
+  cp -R source/build/HowtankWidgetSwift.xcframework ./
 fi
 
