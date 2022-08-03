@@ -11,7 +11,7 @@ sh ./publish_podspec.sh
 ```
 
 
-**LATEST_VERSION** = **2.2.6**
+**LATEST_VERSION** = **2.2.7**
 
 # Integration guideline
 

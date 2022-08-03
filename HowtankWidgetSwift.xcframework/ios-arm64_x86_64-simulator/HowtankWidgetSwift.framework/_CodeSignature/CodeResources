@@ -50,7 +50,7 @@
 		</data>
 		<key>HTReceivedImageCell.nib</key>
 		<data>
-		KvnzLVfwjbeMrdZnLzstpwoDn7s=
+		jxCeAWbQ/0XH6gHUWTt2UQyYoF4=
 		</data>
 		<key>HTReceivedMessageCell.nib</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>HTSentImageCell.nib</key>
 		<data>
-		/ibkAQmd6krjb7HFdWillnR+BZA=
+		qO/xd+RtUY3dKFEYUpkZoqjQnyI=
 		</data>
 		<key>HTSentMessageCell.nib</key>
 		<data>
@@ -90,7 +90,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		D0b+zVAc0qOXmOiNZl5ojoGAuSw=
+		CqrJd/hxwxpXt1pkIlU3PW8RovY=
 		</data>
 		<key>Modules/HowtankWidgetSwift.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -102,7 +102,7 @@
 		</data>
 		<key>Modules/HowtankWidgetSwift.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		70zORh1PKJpldRsAShuEH6Wa2RA=
+		36dnq5dzlmSKAG7Vkeq7nPF7YV0=
 		</data>
 		<key>Modules/HowtankWidgetSwift.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -114,7 +114,7 @@
 		</data>
 		<key>Modules/HowtankWidgetSwift.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		H1x4SkAUlpCcobuEelLZH/Vca5Y=
+		s6b/RmcnxfvLUKQnfJULiMSHuFI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -204,7 +204,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8jsWZueAe1LyVSOEgylf2jBqXm4DFVAHhRrZgC8pjA8=
+			6lzjlDWYUi9VSD141m7oy/s/u+00064S/hvdyFVanb0=
 			</data>
 		</dict>
 		<key>HTReceivedMessageCell.nib</key>
@@ -225,7 +225,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dDNWUh9e5Oyp1igQmJHPCA20ddUQnwPFl+m1VMKgJ58=
+			7OoLtzyR1PkyUgY18daGVu9ico/Mia7Y24WA1a3p1UM=
 			</data>
 		</dict>
 		<key>HTSentMessageCell.nib</key>
@@ -288,7 +288,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8haZkX2SNI9cysLjwSWnvDXbDD3a16MGb9Q7VqBNn04=
+			tFigVB/V444zmQw8AM5OOiRwDhubRVc/bfxjswUKnOg=
 			</data>
 		</dict>
 		<key>Modules/HowtankWidgetSwift.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -309,7 +309,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lQafE8aL5ep5jBTFgaCXyJXl+Zgy1KI62V7/uY3DYPM=
+			0CJj5WpqNJRxn7x4looWi0vaZ9sFUbMKa9rZcediY1Y=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

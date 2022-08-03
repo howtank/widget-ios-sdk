@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'HowtankWidgetSwift'
-  s.version      = '2.2.6'
+  s.version      = '2.2.7'
   s.summary      = 'Howtank Widget library for howtank chat on iOS.'
 
   s.description      = <<-DESC
