@@ -6,16 +6,17 @@ jobs:
   build:
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v2
     - name: Checkout submodules
-      run: git submodule update --init --recursive
+      uses: actions/checkout@v2
+      with:
+        submodules: 'true'
+        token: ${{ secrets.ACCESS_TOKEN }}
     - name: Install Cocoapods
       run: gem install cocoapods  
     - name: dispatch trigger
       if: github.event.action == 'making-framework'
       run: |
-        cd ./source
-        sh ./make_build.sh
+        sh ./update_version.sh
         sh ./publish_podspec.sh ${{ secrets.ACCESS_TOKEN }}
     - name: Deploy to Cocoapods
       run: |
