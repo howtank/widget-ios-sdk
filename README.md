@@ -1,4 +1,4 @@
-# HowtankWidgetSwift
+# Howtank Widget SDK
 To generate the framework, we just need to run command:
 
 ```
