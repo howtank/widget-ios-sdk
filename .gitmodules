@@ -1,4 +1,4 @@
 [submodule ".source"]
 	path = .source
-	url = git@github.com:howtank/widget-ios-swift-sdk.git
+	url = https://github.com/howtank/widget-ios-swift-sdk.git
 	branch = main
