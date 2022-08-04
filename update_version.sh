@@ -11,6 +11,6 @@ else
   sed -i '' "s/${sdkVersion}/${sourceCodeVersion}/" ./README.md
 
   echo '============ copy framework from source code repo ================'
-  cp -Rv source/build/HowtankWidgetSwift.xcframework ./
+  cp -Rv .source/build/HowtankWidgetSwift.xcframework ./
 fi
 
