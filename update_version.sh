@@ -1,7 +1,5 @@
 sourceCodeVersion=$(node -p "require('./source/package.json').version") 
 sdkVersion=$(node -p "require('./package.json').version") 
-echo 'copy framework from source code repo.'
-  cp -Rv source/build/HowtankWidgetSwift.xcframework ./
 
 if [ "$sourceCodeVersion" == "$sdkVersion"  ]; then
   echo 'No new version detected.'
