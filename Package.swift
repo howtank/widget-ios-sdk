@@ -13,5 +13,5 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "HowtankWidgetSwift", 
-            path: "iOS/HowtankWidgetSwift.xcframework")
+            path: "HowtankWidgetSwift.xcframework")
     ])
