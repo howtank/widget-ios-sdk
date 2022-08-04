@@ -1,4 +1,4 @@
-sourceCodeVersion=$(node -p "require('./source/package.json').version") 
+sourceCodeVersion=$(node -p "require('./.source/package.json').version") 
 sdkVersion=$(node -p "require('./package.json').version") 
 
 if [ "$sourceCodeVersion" == "$sdkVersion"  ]; then
@@ -11,6 +11,5 @@ else
   sed -i '' "s/${sdkVersion}/${sourceCodeVersion}/" ./README.md
 
   echo '============ copy framework from source code repo ================'
-  cp -Rv source/build/HowtankWidgetSwift.xcframework ./
+  cp -Rv .source/build/HowtankWidgetSwift.xcframework ./
 fi
-
