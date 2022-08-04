@@ -2,6 +2,7 @@
 import PackageDescription
 let package = Package(
     name: "HowtankWidgetSwift",
+    exclude: ["source/", "package.json", "publish_podspec.sh", "update_version.sh"]
     platforms: [
         .iOS(.v12)
     ],
