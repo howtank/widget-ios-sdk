@@ -1,4 +1,4 @@
-sourceCodeVersion=$(node -p "require('.source/package.json').version") 
+sourceCodeVersion=$(node -p "require('./.source/package.json').version") 
 sdkVersion=$(node -p "require('./package.json').version") 
 
 if [ "$sourceCodeVersion" == "$sdkVersion"  ]; then
@@ -13,4 +13,3 @@ else
   echo '============ copy framework from source code repo ================'
   cp -Rv .source/build/HowtankWidgetSwift.xcframework ./
 fi
-
