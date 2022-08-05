@@ -1,20 +1,4 @@
-# Howtank Widget SDK
-To generate the framework, we just need to run command:
-
-```
-sh ./make_build.sh
-```
-
-To publish the generated framework to Cocoapod and Swift package manager, run the command:
-```
-sh ./publish_podspec.sh
-```
-
-
-**LATEST_VERSION** = **2.3.0**
-
-# Integration guideline
-
+# Howtank Widget SDK - Version <span style="color: red">2.3.0</span>
 ### Technical overview
 - The **Howtank iOS widget** is a library that, once included in your app, display the `Howtank chat`. 
 - Before being clicked by the user, it is in a `folded` state, waiting quietly for a user action.
@@ -36,7 +20,7 @@ sh ./publish_podspec.sh
     3. Please read the content of the `ViewController.swift` file. It is fully documented and explain how to set up and run the widget.
     
 ### Installation:
-1. In your project folder, add ``pod ‘HowtankWidgetSwift’, ‘LATEST_VERSION’`` into the ``Podfile``
+1. In your project folder, add ``pod ‘HowtankWidgetSwift’, ‘2.3.0’`` into the ``Podfile``
 2. Then run ``Pod install`` command on terminal.
 
 ### Quick setup
